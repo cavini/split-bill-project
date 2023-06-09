@@ -9,7 +9,7 @@ const AddFriend = () => {
 
       <label>🌄 Image URL</label>
       <input type="text" />
-      <Button text="Add" />
+      <Button onClick={() => console.log('placeholder function')} text="Add" />
     </form>
   );
 };
