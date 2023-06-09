@@ -1,6 +1,6 @@
 import React from 'react';
 import { FriendProps } from './@types';
-import { calculateDebt } from '../../../utils/calculateDebt';
+import { calculateDebt } from '../../utils/calculateDebt';
 
 export const FriendCard = ({ friend }: FriendProps) => {
   return (
