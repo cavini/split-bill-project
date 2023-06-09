@@ -1,6 +1,6 @@
 import React from 'react';
 import { FriendsListProps } from './@types';
-import { FriendCard } from './FriendCard';
+import { FriendCard } from '../FriendCard';
 
 export const FriendsList = ({ friends }: FriendsListProps) => {
   return (
