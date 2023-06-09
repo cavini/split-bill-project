@@ -9,7 +9,10 @@ export const FriendCard = ({ friend }: FriendProps) => {
       <img src={friend.image} alt={friend.name} />
       <h3>{friend.name}</h3>
       {calculateDebt(friend)}
-      <Button text="Select" />
+      <Button
+        onClick={() => console.log('placeholder function')}
+        text="Select"
+      />
     </li>
   );
 };
