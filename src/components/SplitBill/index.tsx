@@ -21,7 +21,10 @@ const SplitBill = () => {
         <option value="friend">X</option>
       </select>
 
-      <Button text="Split bill" />
+      <Button
+        onClick={() => console.log('placeholder function')}
+        text="Split bill"
+      />
     </form>
   );
 };
