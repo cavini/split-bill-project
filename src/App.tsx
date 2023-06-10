@@ -8,24 +8,38 @@ import SplitBill from './components/SplitBill';
 function App() {
   const [showAddFriend, setShowAddFriend] = useState<boolean>(false);
   const [friends, setFriends] = useState<FriendInterface[]>(initialFriends);
+  const [selectedFriend, setSelectedFriend] = useState<null | FriendInterface>(
+    null
+  );
   const handleshowAddFriend = () => {
     setShowAddFriend(!showAddFriend);
   };
   const handleAddFriend = (friend: FriendInterface) => {
     setFriends((friends) => [...friends, friend]);
   };
+
+  const handleSelectFriend = (friend: FriendInterface) => {
+    setSelectedFriend((selected) =>
+      selected?.id === friend.id ? null : friend
+    );
+    setShowAddFriend(false);
+  };
   return (
     <div className="app">
       <div className="sidebar">
         {' '}
-        <FriendsList friends={friends} />
+        <FriendsList
+          friends={friends}
+          onSelectFriend={handleSelectFriend}
+          selectedFriend={selectedFriend}
+        />
         {showAddFriend && <AddFriend onAddFriend={handleAddFriend} />}
         <Button
           onClick={handleshowAddFriend}
           text={showAddFriend ? 'Close' : 'Add'}
         />
       </div>
-      <SplitBill />
+      {selectedFriend && <SplitBill selectedFriend={selectedFriend} />}
     </div>
   );
 }
