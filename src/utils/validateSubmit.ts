@@ -1,3 +1,6 @@
-export const validateSubmit = (name: string, image: string) => {
-  return Boolean(name && image);
+export const validateSubmit = (
+  param1: string | number,
+  param2: string | number
+) => {
+  return Boolean(param1 && param2);
 };
